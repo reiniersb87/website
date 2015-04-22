@@ -410,16 +410,16 @@
         },
         {
             "name": "joselfonseca/laravel-admin",
-            "version": "0.1.2",
+            "version": "0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joselfonseca/laravel-admin.git",
-                "reference": "f25927c57847e154ef54276fbf40fcd2a161b416"
+                "reference": "644026264aac8ccce06c09663e084d7beed63624"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joselfonseca/laravel-admin/zipball/f25927c57847e154ef54276fbf40fcd2a161b416",
-                "reference": "f25927c57847e154ef54276fbf40fcd2a161b416",
+                "url": "https://api.github.com/repos/joselfonseca/laravel-admin/zipball/644026264aac8ccce06c09663e084d7beed63624",
+                "reference": "644026264aac8ccce06c09663e084d7beed63624",
                 "shasum": ""
             },
             "require": {
@@ -463,7 +463,7 @@
                 "laravel Administrator",
                 "laravel-admin"
             ],
-            "time": "2015-04-22 17:57:46"
+            "time": "2015-04-22 21:43:28"
         },
         {
             "name": "kodeine/laravel-acl",

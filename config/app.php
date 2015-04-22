@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'es',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -144,6 +144,7 @@ return [
 		'Hel\Providers\ConfigServiceProvider',
 		'Hel\Providers\EventServiceProvider',
 		'Hel\Providers\RouteServiceProvider',
+		'Joselfonseca\LaravelAdmin\Providers\LaravelAdminServiceProvider',
 
 	],
 
