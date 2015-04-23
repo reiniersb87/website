@@ -5,15 +5,19 @@ namespace Hel\Http\Controllers;
 use Hel\Http\Controllers\Controller;
 use Hel\Services\Projects\ProjectService;
 use Hel\Http\Requests\CreateProjectRequest;
+use Hel\Services\Projects\Project;
+use Joselfonseca\ImageManager\ImageRender;
 
 class SitesController extends Controller
 {
 
 	private $service;
+    private $img;
 
-	public function __construct(ProjectService $service)
+	public function __construct(ProjectService $service, ImageRender $img)
 	{
 		$this->service = $service;
+        $this->img = $img;
 	}
 
     /**
@@ -23,7 +27,9 @@ class SitesController extends Controller
      */
     public function index()
     {
-        return view('sites.index')->with('currentMenu', 'home');
+        return view('sites.index')
+                ->with('projects', $this->service->getProjects())
+                ->with('currentMenu', 'home');
     }
 
     /**
@@ -37,6 +43,16 @@ class SitesController extends Controller
 	            ->with('categories', $this->service->getCategories())
 	            ->with('tags', $this->service->getTags())
 	            ->with('currentMenu', 'addproject');
+    }
+
+    public function projectImage($id, $heigth){
+        try {
+            $i = \Joselfonseca\ImageManager\Models\ImageManagerFiles::find($id);
+            $this->img->setProperties(IM_UPLOADPATH, $i->path, null, $heigth, false);
+        } catch (ModelNotFoundException $e) {
+            $this->img->setProperties(null, null, null, $heigth, false);
+        }
+        return $this->img->render();
     }
 
     /**

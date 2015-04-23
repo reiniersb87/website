@@ -15,6 +15,12 @@ class ProjectService {
 		$this->image = $image;
 	}
 
+	public function getProjects(){
+		$collection = Project::orderBy('created_at', 'desc')
+						->where('is_published', '=', '1');
+		return $collection->simplePaginate(12);
+	}
+
 	public function getCategories(){
 		$c = new Category;
 		return $c->forSelect();

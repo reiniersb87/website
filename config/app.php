@@ -146,7 +146,8 @@ return [
 		'Hel\Providers\RouteServiceProvider',
 		'Joselfonseca\LaravelAdmin\Providers\LaravelAdminServiceProvider',
 		'Joselfonseca\ImageManager\ImageManagerServiceProvider',
-		'Laracasts\Flash\FlashServiceProvider'
+		'Laracasts\Flash\FlashServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 
 	],
 
@@ -195,7 +196,8 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-		'Flash' => 'Laracasts\Flash\Flash'
+		'Flash' => 'Laracasts\Flash\Flash',
+		'Image' => 'Intervention\Image\Facades\Image',
 	],
 
 ];
