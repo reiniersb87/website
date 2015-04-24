@@ -31,18 +31,19 @@
 					</button>
 					<a class="navbar-brand" href="#">Hecho en Laravel</a>
 				</div>
-
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li @if($currentMenu === "home") class="active" @endif><a href="{{ url('/') }}"><i class="fa fa-folder"></i> Proyectos</a></li>
 						<li @if($currentMenu === "addproject") class="active" @endif><a href="{{ url('/agregar') }}"><i class="fa fa-plus"></i> Agregar Proyecto</a></li>
+						<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías <span class="caret"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+				          	@foreach($categoriesList as $c)
+				          		<li><a href="{{url('categoria/'.$c->slug)}}">{{$c->name}}</a></li>
+				          	@endforeach  
+				          </ul>
+				        </li>
 					</ul>
-					<form class="navbar-form navbar-right" role="search">
-				        <div class="form-group">
-				          <input type="text" class="form-control" placeholder="Buscar">
-				        </div>
-				        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> Buscar</button>
-			      	</form>
 					<ul class="nav navbar-nav navbar-right">
 						
 					</ul>

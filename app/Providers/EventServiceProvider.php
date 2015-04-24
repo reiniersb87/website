@@ -2,6 +2,10 @@
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Hel\Services\Projects\Project;
+use Hel\Services\Category;
+use Hel\Services\Tag;
+use Hel\Services\SlugGeneratorObserver;
 
 class EventServiceProvider extends ServiceProvider {
 
@@ -25,8 +29,9 @@ class EventServiceProvider extends ServiceProvider {
 	public function boot(DispatcherContract $events)
 	{
 		parent::boot($events);
-
-		//
+		Project::observe(new SlugGeneratorObserver);
+		Category::observe(new SlugGeneratorObserver);
+		Tag::observe(new SlugGeneratorObserver);
 	}
 
 }

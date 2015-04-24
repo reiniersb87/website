@@ -1,6 +1,9 @@
 <?php namespace Hel\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use View;
+use Hel\Services\Category;
+use Hel\Services\Tag;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -11,7 +14,12 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		View::composer('*', function($view)
+		{
+		    $view->with('categoriesList', Category::orderBy('name', 'asc')->get())
+		    ->with('tagList', Tag::orderBy('name', 'asc'));
+		});
+		
 	}
 
 	/**

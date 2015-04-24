@@ -2,15 +2,19 @@
 
 namespace Hel\Services;
 
+use Hel\Services\SlugGeneratorTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
 
-	protected $table = 'categories';
-	protected $fillable = ['name'];
-	
-	public function projects() {
+    use SlugGeneratorTrait;
+
+    protected $table = 'categories';
+    protected $fillable = ['name', 'slug'];
+
+    public function projects()
+    {
         return $this->morphedByMany('Hel\Services\Projects\Project', 'categorable');
     }
 
@@ -45,13 +49,14 @@ class Category extends Model
 
     public function searchByCategory($category, $categoryable)
     {
-        $category = $this->where('name', '=', $category)->firstOrFail();
-        return ['category' => $category, 'collection' => $category->{$categoryable}()->orderBy('created_at', 'desc')->where('is_published', '=', '1')];
+        $category = $this->where('slug', '=', $category)->firstOrFail();
+        return ['category' => $category, 'collection' => $category->{$categoryable}()->orderBy('created_at', 'desc')->where('is_published', '=', '1')->get()];
     }
 
-    public function forSelect(){
+    public function forSelect()
+    {
         $data = [];
-        $this->orderBy('name')->get()->each(function($cate) use (&$data){
+        $this->orderBy('name')->get()->each(function ($cate) use (&$data) {
             $data[$cate->id] = $cate->name;
         });
         return $data;

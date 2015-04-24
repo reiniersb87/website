@@ -8,13 +8,22 @@
 	</div>
 	<hr>
 	<div class="row">
+		<div class="col-md-12 text-center">
+			<h3>
+				Proyectos registrados 
+				@if(isset($categoryOn)) en categoría: {{$categoryOn->name}} @endif
+				@if(isset($tagOn)) con el tag: {{$tagOn->name}} @endif
+			</h3>
+		</div>
+	</div>
+	<div class="row">
 		@foreach($projects as $project)
 			<div class="col-md-4">
 			    <div class="thumbnail">
 			    	<img src="{{url('project/image/'.$project->image_id.'/400')}}" class="img-responsive" alt="{{ucfirst($project->name)}}">
 			      	<div class="caption">
 			        	<h3>{{ucfirst($project->name)}}</h3>
-			        	<p><a href="#" class="btn btn-primary" role="button">Ver sitio</a>
+			        	<p><a href="{{url('proyecto/'.$project->slug)}}" class="btn btn-primary btn-block" role="button">Más información</a>
 			      </div>
 			    </div>
 			</div>
@@ -22,7 +31,9 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 text-center">
-			{!! $projects->render() !!}
+			@if(method_exists($projects, 'render'))
+				{!! $projects->render() !!}
+			@endif
 		</div>
 	</div>
 </div>

@@ -58,9 +58,9 @@
 					      	</div>
 					    </div>
 					    <div class="form-group">
-					    	<label for="inputUsertwitter" class="col-lg-3 control-label">Twitter del creador (sin @)</label>
+					    	<label for="inputUsertwitter" class="col-lg-3 control-label">Twitter del creador (sin @) (opcional)</label>
 					    	<div class="col-lg-9">
-					    		{!! Form::text('user_twitter', null, ['class' => 'form-control', 'placeholder' => 'Email del creador', 'id' => 'inputUsertwitter']) !!}
+					    		{!! Form::text('user_twitter', null, ['class' => 'form-control', 'placeholder' => 'Twitter del creador', 'id' => 'inputUsertwitter']) !!}
 					      	</div>
 					    </div>
 					    <div class="form-group">

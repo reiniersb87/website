@@ -7,6 +7,8 @@ use Hel\Services\Projects\ProjectService;
 use Hel\Http\Requests\CreateProjectRequest;
 use Hel\Services\Projects\Project;
 use Joselfonseca\ImageManager\ImageRender;
+use Hel\Services\Category;
+use Hel\Services\Tag;
 
 class SitesController extends Controller
 {
@@ -45,7 +47,7 @@ class SitesController extends Controller
 	            ->with('currentMenu', 'addproject');
     }
 
-    public function projectImage($id, $heigth){
+    public function projectImage($id, $heigth = null){
         try {
             $i = \Joselfonseca\ImageManager\Models\ImageManagerFiles::find($id);
             $this->img->setProperties(IM_UPLOADPATH, $i->path, null, $heigth, false);
@@ -73,42 +75,28 @@ class SitesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $project = Project::where('slug', $slug)->firstOrFail();
+        return view('sites.show')->with('project', $project)->with('currentMenu', 'home');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
+    public function byCategory($slug){
+        $category = new Category;
+        $collection = $category->searchByCategory($slug, 'projects');
+        return view('sites.index')
+                ->with('categoryOn', $collection['category'])
+                ->with('projects', $collection['collection'])
+                ->with('currentMenu', 'home');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function byTag($slug){
+        $tag = new Tag;
+        $collection = $tag->searchByTag($slug, 'projects');
+        return view('sites.index')
+                ->with('tagOn', $collection['tag'])
+                ->with('projects', $collection['collection'])
+                ->with('currentMenu', 'home');
     }
 
 }

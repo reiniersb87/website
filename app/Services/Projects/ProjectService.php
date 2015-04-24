@@ -37,7 +37,6 @@ class ProjectService {
 		$projectData = [
 			'image_id' => $file->id,
 			'name' => $input['name'],
-			'slug' => Project::generateSlug($input['name']),
 			'description' => $input['description'],
 			'url' => $input['url'],
 			'user_email' => $input['user_email'],

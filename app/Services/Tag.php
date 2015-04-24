@@ -3,9 +3,11 @@
 namespace Hel\Services;
 
 use Illuminate\Database\Eloquent\Model;
+use Hel\Services\SlugGeneratorTrait;
 
 class Tag extends Model
 {
+    use SlugGeneratorTrait;
 
     protected $table = 'tags';
     protected $fillable = ['name'];
@@ -45,8 +47,8 @@ class Tag extends Model
 
     public function searchByTag($tag, $taggable)
     {
-        $tag = $this->where('name', '=', $tag)->firstOrFail();
-        return ['tag' => $tag, 'collection' => $tag->{$taggable}()->orderBy('created_at', 'desc')->where('published', '=', '1')->get()];
+        $tag = $this->where('slug', '=', $tag)->firstOrFail();
+        return ['tag' => $tag, 'collection' => $tag->{$taggable}()->orderBy('created_at', 'desc')->where('is_published', '=', '1')->get()];
     }
 
     public function forSelect(){

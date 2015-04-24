@@ -4,6 +4,7 @@ namespace Hel\Services\Projects;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Project extends Model
 {
 
@@ -18,9 +19,5 @@ class Project extends Model
         return $this->morphToMany('Hel\Services\Category', 'categorable');
     }
 
-    public static function generateSlug($name) {
-        $slug = str_slug($name);
-        $slugCount = count(Project::whereRaw("slug REGEXP '^{$slug}(-[0-9]*)?$'")->get());
-        return ($slugCount > 0) ? "{$slug}-{$slugCount}" : $slug;
-    }
+    
 }

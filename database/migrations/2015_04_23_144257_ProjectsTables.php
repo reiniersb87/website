@@ -15,12 +15,14 @@ class ProjectsTables extends Migration
     	Schema::create('tags', function($table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug');
             $table->timestamps();
             $table->softDeletes();
         });
         Schema::create('categories', function($table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('slug');
             $table->timestamps();
             $table->softDeletes();
         });
