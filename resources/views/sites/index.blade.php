@@ -2,12 +2,12 @@
 @section('meta')
 <meta name="title" content="Hecho en laravel">
 <meta name="keywords" content="Laravel, Laravel en español, Projectos en laravel, PHP">
-<meta name="description" content="Directorio de sitios web y aplicaciones web hechas en laravel en español.">
+<meta name="description" content="Directorio de sitios web y aplicaciones web hechas en Laravel en español.">
 <meta name="author" content="Jose Fonseca">
-<meta property="og:title" content="Hecho en laravel" />
+<meta property="og:title" content="Hecho en Laravel" />
 <meta property="og:url" content="http://hechoenlaravel.com/" />
 <meta property="og:image" content="{{asset('img/laravel.jpg')}}" />
-<meta property="og:description" content="Directorio de sitios web y aplicaciones web hechas en laravel en español." />
+<meta property="og:description" content="Directorio de sitios web y aplicaciones web hechas en Laravel en español." />
 @endsection
 @section('content')
 <div class="container">
