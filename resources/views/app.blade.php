@@ -35,7 +35,6 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li @if($currentMenu === "home") class="active" @endif><a href="{{ url('/') }}"><i class="fa fa-folder"></i> Proyectos</a></li>
-                            <li @if($currentMenu === "addproject") class="active" @endif><a href="{{ url('/agregar') }}"><i class="fa fa-plus"></i> Agregar Proyecto</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
@@ -46,7 +45,7 @@
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-
+                            <li @if($currentMenu === "addproject") class="active" @endif><a href="{{ url('/agregar') }}"><i class="fa fa-plus"></i> Agregar Proyecto</a></li>
                         </ul>
                     </div>
                 </div>
