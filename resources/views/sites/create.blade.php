@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputCategories" class="col-lg-3 control-label">Categorias *</label>
+                        <label for="inputCategories" class="col-lg-3 control-label">Categorías *</label>
                         <div class="col-lg-9">
                             {!! Form::select('categories[]', $categories, null, ['class' => 'form-control selectpicker', 'placeholder' => 'Seleccione las Categorias', 'id' => 'inputCategories', 'required' => 'required', 'multiple' => 'multiple']) !!}
                         </div>
