@@ -44,7 +44,7 @@
     <hr>
     <div class="row">
         <div class="col-md-12 text-center">
-            <h3>Projectos Relacionados</h3>
+            <h3>Proyectos Relacionados</h3>
         </div>    
     </div>
     <div class="row">
