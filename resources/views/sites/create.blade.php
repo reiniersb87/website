@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1>Agregar Projecto</h1>
+            <h1>Agregar Proyecto</h1>
             <p>Llene los datos en el siguiente formulario para publicar un proyecto, tenga en cuenta que el mismo pasará por un proceso de aprobación antes que sea publicado en el sitio.</p>
             @if (count($errors) > 0)
             <div class="alert alert-danger">
