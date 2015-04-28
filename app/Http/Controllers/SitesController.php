@@ -10,17 +10,16 @@ use Joselfonseca\ImageManager\ImageRender;
 use Hel\Services\Category;
 use Hel\Services\Tag;
 
-class SitesController extends Controller
-{
+class SitesController extends Controller {
 
-	private $service;
+    private $service;
     private $img;
 
-	public function __construct(ProjectService $service, ImageRender $img)
-	{
-		$this->service = $service;
+    public function __construct(ProjectService $service, ImageRender $img)
+    {
+        $this->service = $service;
         $this->img = $img;
-	}
+    }
 
     /**
      * Display a listing of the resource.
@@ -30,8 +29,8 @@ class SitesController extends Controller
     public function index()
     {
         return view('sites.index')
-                ->with('projects', $this->service->getProjects())
-                ->with('currentMenu', 'home');
+                        ->with('projects', $this->service->getProjects())
+                        ->with('currentMenu', 'home');
     }
 
     /**
@@ -42,12 +41,13 @@ class SitesController extends Controller
     public function create()
     {
         return view('sites.create')
-	            ->with('categories', $this->service->getCategories())
-	            ->with('tags', $this->service->getTags())
-	            ->with('currentMenu', 'addproject');
+                        ->with('categories', $this->service->getCategories())
+                        ->with('tags', $this->service->getTags())
+                        ->with('currentMenu', 'addproject');
     }
 
-    public function projectImage($id, $heigth = null){
+    public function projectImage($id, $heigth = null)
+    {
         try {
             $i = \Joselfonseca\ImageManager\Models\ImageManagerFiles::find($id);
             $this->img->setProperties(IM_UPLOADPATH, $i->path, null, $heigth, false);
@@ -63,10 +63,10 @@ class SitesController extends Controller
      * @return Response
      */
     public function store(CreateProjectRequest $request)
-    {	
-    	$this->service->createProject($request);
-    	flash()->success('Gracias! Se ha enviado el proyecto para revisión');
-    	return redirect('/');
+    {
+        $this->service->createProject($request);
+        flash()->success('Gracias! Se ha enviado el proyecto para revisión');
+        return redirect('/');
     }
 
     /**
@@ -81,22 +81,24 @@ class SitesController extends Controller
         return view('sites.show')->with('project', $project)->with('currentMenu', 'home');
     }
 
-    public function byCategory($slug){
+    public function byCategory($slug)
+    {
         $category = new Category;
         $collection = $category->searchByCategory($slug, 'projects');
         return view('sites.index')
-                ->with('categoryOn', $collection['category'])
-                ->with('projects', $collection['collection'])
-                ->with('currentMenu', 'home');
+                        ->with('categoryOn', $collection['category'])
+                        ->with('projects', $collection['collection'])
+                        ->with('currentMenu', 'home');
     }
 
-    public function byTag($slug){
+    public function byTag($slug)
+    {
         $tag = new Tag;
         $collection = $tag->searchByTag($slug, 'projects');
         return view('sites.index')
-                ->with('tagOn', $collection['tag'])
-                ->with('projects', $collection['collection'])
-                ->with('currentMenu', 'home');
+                        ->with('tagOn', $collection['tag'])
+                        ->with('projects', $collection['collection'])
+                        ->with('currentMenu', 'home');
     }
 
 }
