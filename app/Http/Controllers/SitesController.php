@@ -78,7 +78,16 @@ class SitesController extends Controller {
     public function show($slug)
     {
         $project = Project::where('slug', $slug)->firstOrFail();
-        return view('sites.show')->with('project', $project)->with('currentMenu', 'home');
+        // related tags 
+        $c = $project->categories;
+        $related = Project::whereHas('categories', function($query) use($c){
+            $categories = [];
+            $c->each(function($cate) use($query, &$categories){
+                $categories[] = $cate->id;
+            });
+            $query->whereIn('categories.id', $categories);
+        })->where('is_published', 1)->where('id', '!=', $project->id)->take(3)->get();
+        return view('sites.show')->with('project', $project)->with('related', $related)->with('currentMenu', 'home');
     }
 
     public function byCategory($slug)
