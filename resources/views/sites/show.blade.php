@@ -50,7 +50,7 @@
     <div class="row">
         @foreach($related as $p)
         <div class="col-md-4">
-            <div class="thumbnail">
+            <div class="thumbnail project">
                 <img src="{{url('project/image/'.$p->image_id.'/400')}}" class="img-responsive" alt="{{ucfirst($p->name)}}">
                 <div class="caption">
                     <h3>{{ucfirst($p->name)}}</h3>

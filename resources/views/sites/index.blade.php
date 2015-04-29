@@ -28,7 +28,7 @@
     <div class="row">
         @foreach($projects as $project)
         <div class="col-md-4">
-            <div class="thumbnail">
+            <div class="thumbnail project">
                 <img src="{{url('project/image/'.$project->image_id.'/400')}}" class="img-responsive" alt="{{ucfirst($project->name)}}">
                 <div class="caption">
                     <h3>{{ucfirst($project->name)}}</h3>
