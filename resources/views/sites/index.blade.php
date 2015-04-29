@@ -29,7 +29,7 @@
         @foreach($projects as $project)
         <div class="col-md-4">
             <div class="thumbnail project">
-                <img src="{{url('project/image/'.$project->image_id.'/400')}}" class="img-responsive" alt="{{ucfirst($project->name)}}">
+                <img src="{{url('project/image/'.$project->image_id.'/400')}}" class="img-responsive" alt="{{ucfirst($project->name)}}" style="max-height: 200px;">
                 <div class="caption">
                     <h3>{{ucfirst($project->name)}}</h3>
                     <p><a href="{{url('proyecto/'.$project->slug)}}" class="btn btn-primary btn-block" role="button">Más información</a>
