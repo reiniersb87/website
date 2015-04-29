@@ -51,7 +51,7 @@
         @foreach($related as $p)
         <div class="col-md-4">
             <div class="thumbnail project">
-                <img src="{{url('project/image/'.$p->image_id.'/400')}}" class="img-responsive" alt="{{ucfirst($p->name)}}">
+                <img src="{{url('project/image/'.$p->image_id.'/400')}}" class="img-responsive" alt="{{ucfirst($p->name)}}" style="max-height: 200px;">
                 <div class="caption">
                     <h3>{{ucfirst($p->name)}}</h3>
                     <p><a href="{{url('proyecto/'.$p->slug)}}" class="btn btn-primary btn-block" role="button">Más información</a>
