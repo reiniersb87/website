@@ -6,20 +6,28 @@
     "type": "project",
     "require": {
         "laravel/framework": "5.0.*",
-        "joselfonseca/laravel-admin": "0.1.*",
-        "joselfonseca/image-manager": "dev-master",
+        "laravelcollective/html": "~5.0",
         "laracasts/flash": "~1.3"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1"
+        "phpspec/phpspec": "~2.1",
+        "laracasts/commander": "~1.0",
+        "intervention/image": "2.*",
+        "intervention/imagecache": "2.*",
+        "kodeine/laravel-acl" : "0.1.*",
+        "rcrowe/twigbridge" : "0.7.*",
+        "league/fractal": "0.11.*"
     },
     "autoload": {
         "classmap": [
             "database"
         ],
         "psr-4": {
-            "Hel\\": "app/"
+            "Hel\\": "app/",
+            "Joselfonseca\\LaravelAdmin\\": "joselfonseca/laravel-admin/src",
+            "Joselfonseca\\ImageManager\\": "joselfonseca/image-manager/src",
+            "Joselfonseca\\LaravelApiTools\\": "joselfonseca/laravel-api-tools/src"
         }
     },
     "autoload-dev": {
