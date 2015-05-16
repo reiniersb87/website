@@ -10,7 +10,8 @@ use Joselfonseca\ImageManager\ImageRender;
 use Hel\Services\Category;
 use Hel\Services\Tag;
 
-class SitesController extends Controller {
+class SitesController extends Controller
+{
 
     private $service;
     private $img;
@@ -29,8 +30,8 @@ class SitesController extends Controller {
     public function index()
     {
         return view('sites.index')
-                        ->with('projects', $this->service->getProjects())
-                        ->with('currentMenu', 'home');
+            ->with('projects', $this->service->getProjects())
+            ->with('currentMenu', 'home');
     }
 
     /**
@@ -41,9 +42,9 @@ class SitesController extends Controller {
     public function create()
     {
         return view('sites.create')
-                        ->with('categories', $this->service->getCategories())
-                        ->with('tags', $this->service->getTags())
-                        ->with('currentMenu', 'addproject');
+            ->with('categories', $this->service->getCategories())
+            ->with('tags', $this->service->getTags())
+            ->with('currentMenu', 'addproject');
     }
 
     public function projectImage($id, $heigth = null)
@@ -72,7 +73,7 @@ class SitesController extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($slug)
@@ -80,9 +81,9 @@ class SitesController extends Controller {
         $project = Project::where('slug', $slug)->firstOrFail();
         // related tags 
         $c = $project->categories;
-        $related = Project::whereHas('categories', function($query) use($c){
+        $related = Project::whereHas('categories', function ($query) use ($c) {
             $categories = [];
-            $c->each(function($cate) use($query, &$categories){
+            $c->each(function ($cate) use ($query, &$categories) {
                 $categories[] = $cate->id;
             });
             $query->whereIn('categories.id', $categories);
@@ -95,9 +96,9 @@ class SitesController extends Controller {
         $category = new Category;
         $collection = $category->searchByCategory($slug, 'projects');
         return view('sites.index')
-                        ->with('categoryOn', $collection['category'])
-                        ->with('projects', $collection['collection'])
-                        ->with('currentMenu', 'home');
+            ->with('categoryOn', $collection['category'])
+            ->with('projects', $collection['collection'])
+            ->with('currentMenu', 'home');
     }
 
     public function byTag($slug)
@@ -105,9 +106,9 @@ class SitesController extends Controller {
         $tag = new Tag;
         $collection = $tag->searchByTag($slug, 'projects');
         return view('sites.index')
-                        ->with('tagOn', $collection['tag'])
-                        ->with('projects', $collection['collection'])
-                        ->with('currentMenu', 'home');
+            ->with('tagOn', $collection['tag'])
+            ->with('projects', $collection['collection'])
+            ->with('currentMenu', 'home');
     }
 
 }
