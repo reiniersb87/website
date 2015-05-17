@@ -144,6 +144,7 @@ return [
 		'Hel\Providers\ConfigServiceProvider',
 		'Hel\Providers\EventServiceProvider',
 		'Hel\Providers\RouteServiceProvider',
+        'Collective\Html\HtmlServiceProvider',
 		'Joselfonseca\ImageManager\ImageManagerServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider'
 
@@ -194,7 +195,9 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-		'Flash' => 'Laracasts\Flash\Flash'
+		'Flash' => 'Laracasts\Flash\Flash',
+        'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
 	],
 
 ];
