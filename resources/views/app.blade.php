@@ -43,16 +43,14 @@
                                     @endforeach  
                                 </ul>
                             </li>
-                            <li @if($currentMenu === "addproject") class="active" @endif><a href="{{ url('/agregar') }}"><i class="fa fa-plus"></i> Agregar Proyecto</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-
+                            <li @if($currentMenu === "addproject") class="active" @endif><a href="{{ url('/agregar') }}"><i class="fa fa-plus"></i> Agregar Proyecto</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
-        </div>	
-
+        </div>
         <div class="container">
             @include('flash::message')
         </div>
