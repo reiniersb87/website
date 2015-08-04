@@ -5,10 +5,10 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "laravel/framework": "5.0.*",
-        "laravelcollective/html": "~5.0",
+        "laravel/framework": "5.1.*",
+        "laravelcollective/html": "~5.1",
         "laracasts/flash": "~1.3",
-        "joselfonseca/image-manager" : "dev-master"
+        "joselfonseca/image-manager" : "2.1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
