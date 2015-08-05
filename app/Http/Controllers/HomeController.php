@@ -20,7 +20,7 @@ class HomeController extends Controller {
     public function show($slug)
     {
         $article = Article::where('slug', $slug)->firstOrFail();
-        $articles = Article::where('published', 1)->whereNotIn('id', [$article->id])->orderBy('created_at', 'DESC')->take(5);
+        $articles = Article::where('published', 1)->whereNotIn('id', [$article->id])->orderBy('created_at', 'DESC')->take(5)->get();
         return view('episode')
             ->with('article', $article)
             ->with('articles', $articles)

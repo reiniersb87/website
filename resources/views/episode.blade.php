@@ -41,7 +41,7 @@
             @endif
             @foreach($articles as $related)
                     <div class="thumbnail project">
-                        <img src="{{url('image-manager/view/'.$article->image.'/600/300/canvas')}}" class="img-responsive" alt="{{ucfirst($related->title)}}">
+                        <img src="{{url('image-manager/view/'.$related->image.'/600/300/canvas')}}" class="img-responsive" alt="{{ucfirst($related->title)}}">
                         <div class="caption">
                             <h3>{{ucfirst($related->title)}}</h3>
                             <p><a href="{{url('episodio/'.$related->slug)}}" class="btn btn-primary btn-block" role="button">Ver Episodio</a>
