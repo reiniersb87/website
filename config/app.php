@@ -39,7 +39,7 @@ return [
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'America/Bogota',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -136,6 +136,8 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
         'Illuminate\Broadcasting\BroadcastServiceProvider',
+        'Joselfonseca\LaravelAdmin\Providers\LaravelAdminServiceProvider',
+        'Joselfonseca\LaravelAdminBlog\Providers\LaravelAdminBlogServiceProvider',
 
 		/*
 		 * Application Service Providers...

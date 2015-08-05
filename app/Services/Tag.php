@@ -9,11 +9,11 @@ class Tag extends Model
 {
     use SlugGeneratorTrait;
 
-    protected $table = 'tags';
+    protected $table = 'projects_tags';
     protected $fillable = ['name'];
 
     public function projects() {
-        return $this->morphedByMany('Hel\Services\Projects\Project', 'taggable');
+        return $this->morphedByMany('Hel\Services\Projects\Project', 'projects_taggable', null, 'project_tag_id', 'project_tag_id');
     }
 
     public static function processTagsToArray($tagString, $returnModel = false)

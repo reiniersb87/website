@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    @include('flash::message')
     <div class="row">
         <div class="col-md-6">
             <h1>Agregar Proyecto</h1>

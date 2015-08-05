@@ -17,7 +17,7 @@
             <br />
         </div>
         <div class="col-md-6">
-            <img src="{{url('project/image/'.$project->image_id.'/')}}" class="img-responsive" alt="{{ucfirst($project->name)}}">
+            <img src="{{url('image-manager/view/'.$project->image_id.'/')}}" class="img-responsive" alt="{{ucfirst($project->name)}}">
         </div>
         <div class="col-md-6">
             <strong>Categorias: </strong>
@@ -27,7 +27,7 @@
             <br /><br />
             <strong>Tags: </strong>
             @foreach ($project->tags as $t)
-            <a href="{{url('tag/'.$t->slug)}}"><span class="label label-default">{{$t->name}}</span></a>
+            <a href="{{url('proyectos/tag/'.$t->slug)}}"><span class="label label-default">{{$t->name}}</span></a>
             @endforeach
             <br /><br />
             <strong>URL: </strong> <a href="{{$project->url}}" target="_blank">{{$project->url}}</a>
@@ -51,7 +51,7 @@
         @foreach($related as $p)
         <div class="col-md-4">
             <div class="thumbnail project">
-                <img src="{{url('project/image/'.$p->image_id.'/400')}}" class="img-responsive" alt="{{ucfirst($p->name)}}" style="max-height: 200px;">
+                <img src="{{url('image-manager/view/'.$p->image_id.'/350/190/canvas')}}" class="img-responsive" alt="{{ucfirst($project->name)}}">
                 <div class="caption">
                     <h3>{{ucfirst($p->name)}}</h3>
                     <p><a href="{{url('proyecto/'.$p->slug)}}" class="btn btn-primary btn-block" role="button">Más información</a>

@@ -31,7 +31,7 @@ class SitesController extends Controller
     {
         return view('sites.index')
             ->with('projects', $this->service->getProjects())
-            ->with('currentMenu', 'home');
+            ->with('currentMenu', 'proyectos');
     }
 
     /**
@@ -47,17 +47,6 @@ class SitesController extends Controller
             ->with('currentMenu', 'addproject');
     }
 
-    public function projectImage($id, $heigth = null)
-    {
-        try {
-            $i = \Joselfonseca\ImageManager\Models\ImageManagerFiles::find($id);
-            $this->img->setProperties(IM_UPLOADPATH, $i->path, null, $heigth, false);
-        } catch (ModelNotFoundException $e) {
-            $this->img->setProperties(null, null, null, $heigth, false);
-        }
-        return $this->img->render();
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -67,7 +56,7 @@ class SitesController extends Controller
     {
         $this->service->createProject($request);
         flash()->success('Gracias! Se ha enviado el proyecto para revisión');
-        return redirect('/');
+        return redirect('/proyectos');
     }
 
     /**
@@ -86,9 +75,9 @@ class SitesController extends Controller
             $c->each(function ($cate) use ($query, &$categories) {
                 $categories[] = $cate->id;
             });
-            $query->whereIn('categories.id', $categories);
+            $query->whereIn('projects_categories.id', $categories);
         })->where('is_published', 1)->where('id', '!=', $project->id)->take(3)->get();
-        return view('sites.show')->with('project', $project)->with('related', $related)->with('currentMenu', 'home');
+        return view('sites.show')->with('project', $project)->with('related', $related)->with('currentMenu', 'proyectos');
     }
 
     public function byCategory($slug)
@@ -98,7 +87,7 @@ class SitesController extends Controller
         return view('sites.index')
             ->with('categoryOn', $collection['category'])
             ->with('projects', $collection['collection'])
-            ->with('currentMenu', 'home');
+            ->with('currentMenu', 'proyectos');
     }
 
     public function byTag($slug)
@@ -108,7 +97,7 @@ class SitesController extends Controller
         return view('sites.index')
             ->with('tagOn', $collection['tag'])
             ->with('projects', $collection['collection'])
-            ->with('currentMenu', 'home');
+            ->with('currentMenu', 'proyectos');
     }
 
 }

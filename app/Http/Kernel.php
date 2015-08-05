@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'Hel\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'Hel\Http\Middleware\RedirectIfAuthenticated',
+        'acl' => 'Joselfonseca\LaravelAdmin\Http\Middleware\AclMiddleware',
 	];
 
 }
