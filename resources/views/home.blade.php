@@ -26,6 +26,8 @@
                 <p>No hay publicaciones aún, regresa pronto!</p>
             </div>
         @endif
+        <h2 class="text-center">Episodios</h2>
+        <hr />
         @foreach($articles as $article)
             <div class="col-md-6">
                 <div class="thumbnail project">
