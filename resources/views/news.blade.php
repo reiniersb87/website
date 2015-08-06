@@ -35,6 +35,7 @@
                     <div class="caption">
                         <h3>{{ucfirst($article->title)}}</h3>
                         <p>{{$article->intro}}</p>
+                        <p class="text-muted">Publicado: {{$article->created_at->diffForHumans()}}</p>
                         <p><a href="{{url('noticias/'.$article->slug)}}" class="btn btn-primary btn-block" role="button">Ver Noticia</a>
                     </div>
                 </div>

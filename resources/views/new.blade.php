@@ -16,6 +16,8 @@
             <hr />
             <img src="{{url('image-manager/view/'.$article->image.'')}}" class="img-responsive" alt="{{ucfirst($article->title)}}">
             <hr/>
+            <p class="text-muted">Publicado: {{$article->created_at->diffForHumans()}}</p>
+            <hr/>
             {!! $article->intro !!}
             <br /><br />
             {!! $article->body !!}
