@@ -39,17 +39,17 @@
                 <li @if($currentMenu === "home") class="active" @endif><a href="{{ url('/') }}"><i class="fa fa-microphone"></i> Podcast</a></li>
                 <li @if($currentMenu === "news") class="active" @endif><a href="{{ url('/noticias') }}"><i class="fa fa-newspaper-o"></i> Noticias</a></li>
                 <li @if($currentMenu === "proyectos") class="active" @endif><a href="{{ url('/proyectos') }}"><i class="fa fa-folder"></i> Proyectos</a></li>
-                <li class="dropdown">
+                <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @foreach($categoriesList as $c)
                             <li><a href="{{url('proyectos/categoria/'.$c->slug)}}">{{$c->name}}</a></li>
                         @endforeach
                     </ul>
-                </li>
+                </li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li @if($currentMenu === "addproject") class="active" @endif><a href="{{ url('/proyectos/agregar') }}"><i class="fa fa-plus"></i> Agregar Proyecto</a></li>
+                <li @if($currentMenu === "addproject") class="active" @endif><a href="{{ url('/proyectos/agregar') }}"><i class="fa fa-plus"></i> Registrar Proyecto</a></li>
             </ul>
         </div>
     </div>

@@ -22,12 +22,12 @@
         <div class="col-md-6">
             <strong>Categorias: </strong>
             @foreach ($project->categories as $c)
-            <a href="{{url('categoria/'.$c->slug)}}"><span class="label label-default">{{$c->name}}</span></a>
+            <span class="label label-default">{{$c->name}}</span>
             @endforeach
             <br /><br />
             <strong>Tags: </strong>
             @foreach ($project->tags as $t)
-            <a href="{{url('proyectos/tag/'.$t->slug)}}"><span class="label label-default">{{$t->name}}</span></a>
+            <span class="label label-default">{{$t->name}}</span>
             @endforeach
             <br /><br />
             <strong>URL: </strong> <a href="{{$project->url}}" target="_blank">{{$project->url}}</a>
