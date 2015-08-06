@@ -37,6 +37,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li @if($currentMenu === "home") class="active" @endif><a href="{{ url('/') }}"><i class="fa fa-microphone"></i> Podcast</a></li>
+                <li @if($currentMenu === "news") class="active" @endif><a href="{{ url('/noticias') }}"><i class="fa fa-newspaper-o"></i> Noticias</a></li>
                 <li @if($currentMenu === "proyectos") class="active" @endif><a href="{{ url('/proyectos') }}"><i class="fa fa-folder"></i> Proyectos</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías <span class="caret"></span></a>
