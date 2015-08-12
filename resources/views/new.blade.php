@@ -51,7 +51,7 @@
                     <div class="caption">
                         <h3>{{ucfirst($related->title)}}</h3>
                         <p>{{$related->intro}}</p>
-                        <p><a href="{{url('noticia/'.$related->slug)}}" class="btn btn-primary btn-block" role="button">Ver noticia</a>
+                        <p><a href="{{url('noticias/'.$related->slug)}}" class="btn btn-primary btn-block" role="button">Ver noticia</a>
                     </div>
                 </div>
             @endforeach

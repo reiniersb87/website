@@ -29,7 +29,7 @@ class NewsController extends Controller
         $articles = Article::where('published', 1)->whereNotIn('id', [$article->id])
             ->whereHas('categories', function($query){
                 $query->where('slug', 'noticias');
-            })->orderBy('created_at', 'DESC')->take(5)->get();
+            })->orderBy('created_at', 'DESC')->take(3)->get();
         return view('new')
             ->with('article', $article)
             ->with('articles', $articles)
