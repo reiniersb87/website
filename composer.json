@@ -11,7 +11,8 @@
         "joselfonseca/image-manager" : "2.1.*",
         "doctrine/dbal": "^2.5",
         "joselfonseca/laravel-admin" : "0.3.*",
-        "joselfonseca/laravel-admin-blog" : "0.1.*"
+        "joselfonseca/laravel-admin-blog" : "0.1.*",
+        "roumen/feed": "~2.9"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",

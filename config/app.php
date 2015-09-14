@@ -96,7 +96,6 @@ return [
 	*/
 
 	'log' => 'daily',
-
 	/*
 	|--------------------------------------------------------------------------
 	| Autoloaded Service Providers
@@ -109,7 +108,6 @@ return [
 	*/
 
 	'providers' => [
-
 		/*
 		 * Laravel Framework Service Providers...
 		 */
@@ -149,8 +147,8 @@ return [
 		'Hel\Providers\RouteServiceProvider',
         'Collective\Html\HtmlServiceProvider',
 		'Joselfonseca\ImageManager\ImageManagerServiceProvider',
-		'Laracasts\Flash\FlashServiceProvider'
-
+		'Laracasts\Flash\FlashServiceProvider',
+        'Roumen\Feed\FeedServiceProvider'
 	],
 
 	/*
@@ -201,6 +199,7 @@ return [
 		'Flash' => 'Laracasts\Flash\Flash',
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
+        'Feed' => 'Roumen\Feed\Facades\Feed',
 	],
 
 ];
