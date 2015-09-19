@@ -31,11 +31,13 @@ class BlogTables extends Migration
             $table->increments('id');
             $table->integer('tag_id')->unsigned();
             $table->morphs('taggables');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
         Schema::create('categoryables', function($table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned();
             $table->morphs('categoryables');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
         Schema::create('articles', function($table){
             $table->increments('id');
