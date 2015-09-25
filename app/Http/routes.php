@@ -11,6 +11,7 @@ Route::get('/proyecto/{slug}', 'SitesController@show');
 Route::group(array('middleware' => 'auth'), function(){
     Route::controller('filemanager', 'FilemanagerLaravelController');
 });
+Route::get('/rss/noticias', 'RssController@news');
 /** Dont Need This **/
 //Route::get('/proyectos/categoria/{slug}', 'SitesController@byCategory');
 //Route::get('/proyectos/tag/{slug}', 'SitesController@byTag');
