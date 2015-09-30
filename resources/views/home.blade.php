@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1>Podcast cada 2 semanas para discutir temas de laravel y PHP</h1>
+                    <h1>Podcast cada 2 semanas</h1><h2>para discutir temas de laravel y PHP</h2>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1>Noticias de Laravel y PHP</h1>
+                    <h1>Noticias</h1><h2>de Laravel y PHP</h2>
                 </div>
             </div>
         </div>
