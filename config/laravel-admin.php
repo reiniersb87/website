@@ -7,7 +7,7 @@ return [
     /**
      * Route to go after login
     **/ 
-    'afterLoginRoute' => 'backend/users',
+    'afterLoginRoute' => 'backend/blog',
     /**
     * Add Errors & Logging from Validator Laravel 5.*
     * make for Wim_cartago
