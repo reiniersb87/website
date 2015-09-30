@@ -1,7 +1,7 @@
 <?php
 
-Route::get('/', 'HomeController@index');
-Route::get('/episodio/{slug}', 'HomeController@show');
+Route::get('/', 'PodcastsController@index');
+Route::get('/episodio/{slug}', 'PodcastsController@show');
 Route::get('/noticias/', 'NewsController@index');
 Route::get('/noticias/{slug}', 'NewsController@show');
 Route::get('/proyectos', 'SitesController@index');
