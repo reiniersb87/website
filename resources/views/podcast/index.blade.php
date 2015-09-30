@@ -27,9 +27,9 @@
         @endif
         <hr />
         @foreach($articles as $article)
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="thumbnail project">
-                    <img src="{{url('image-manager/view/'.$article->image.'/600/300/canvas')}}" class="img-responsive" alt="{{ucfirst($article->title)}}">
+                    <img src="{{url('image-manager/view/'.$article->image.'/350/250/canvas')}}" class="img-responsive" alt="{{ucfirst($article->title)}}">
                     <div class="caption">
                         <h3>{{ucfirst($article->title)}}</h3>
                         <p>{{$article->intro}}</p>
