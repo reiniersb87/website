@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1>Proyectos hechos en Laravel en español.</h1>
+                    <h1>Proyectos</h1><h2>hechos en Laravel en español.</h2>
                 </div>
             </div>
         </div>
