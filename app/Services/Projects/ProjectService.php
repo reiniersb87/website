@@ -20,7 +20,7 @@ class ProjectService {
     {
         $collection = Project::orderBy('created_at', 'desc')
                 ->where('is_published', '=', '1');
-        return $collection->simplePaginate(12);
+        return $collection->paginate(12);
     }
 
     public function getCategories()
