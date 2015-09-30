@@ -19,7 +19,7 @@ class NewsController extends Controller
     {
         $articles = Article::where('published', 1)->whereHas('categories', function($query){
             $query->where('slug', 'noticias');
-        })->orderBy('created_at', 'DESC')->paginate(20);
+        })->orderBy('created_at', 'DESC')->paginate(12);
         return view('news')->with('articles', $articles)->with('currentMenu', 'news');
     }
 
