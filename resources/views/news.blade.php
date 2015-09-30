@@ -41,5 +41,13 @@
                 </div>
             </div>
         @endforeach
+        <hr />
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                @if(method_exists($articles, 'render'))
+                    {!! $articles->render() !!}
+                @endif
+            </div>
+        </div>
     </div>
 @endsection

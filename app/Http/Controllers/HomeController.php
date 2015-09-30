@@ -15,7 +15,7 @@ class HomeController extends Controller {
 	{
         $articles = Article::where('published', 1)->whereHas('categories', function($query){
             $query->where('slug', 'podcast');
-        })->orderBy('created_at', 'DESC')->paginate(20);
+        })->orderBy('created_at', 'DESC')->paginate(12);
 		return view('home')->with('articles', $articles)->with('currentMenu', 'home');
 	}
 
