@@ -19,14 +19,12 @@
             </div>
         </div>
     </div>
-    <hr />
     <div class="container">
         @if($articles->count() === 0)
             <div class="alert alert-info">
                 <p>No hay publicaciones aún, regresa pronto!</p>
             </div>
         @endif
-        <h2 class="text-center">Episodios</h2>
         <hr />
         @foreach($articles as $article)
             <div class="col-md-6">
@@ -40,7 +38,6 @@
                 </div>
             </div>
         @endforeach
-        <hr />
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center">
                 @if(method_exists($articles, 'render'))

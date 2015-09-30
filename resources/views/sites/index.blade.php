@@ -23,15 +23,6 @@
         <hr>
         @include('flash::message')
         <div class="row">
-            <div class="col-md-12 text-center">
-                <h3>
-                    Proyectos registrados
-                    @if(isset($categoryOn)) en categoría: {{$categoryOn->name}} @endif
-                    @if(isset($tagOn)) con el tag: {{$tagOn->name}} @endif
-                </h3>
-            </div>
-        </div>
-        <div class="row">
             @foreach($projects as $project)
                 <div class="col-md-4">
                     <div class="thumbnail project">
