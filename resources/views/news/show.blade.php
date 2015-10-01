@@ -16,12 +16,21 @@
             <hr />
             <img src="{{url('image-manager/view/'.$article->image.'')}}" class="img-responsive" alt="{{ucfirst($article->title)}}">
             <hr/>
-            <p class="text-muted">Publicado: {{$article->created_at->diffForHumans()}}</p>
-            <hr/>
             {!! $article->intro !!}
             <br /><br />
             {!! $article->body !!}
+            <hr />
             <div class="addthis_sharing_toolbox"></div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="//{{'www.gravatar.com/avatar/'.md5($author->email)}}" class="img-circle" alt="{{$author->name}}">
+                    </div>
+                    <div class="col-md-10">
+                        <span style="margin-top: 35px; display: block">Publicado {{$article->created_at->diffForHumans()}} por <strong>{{$author->name}}</strong></span>
+                    </div>
+                </div>
+            </div>
             <hr />
             <div id="disqus_thread"></div>
             <script type="text/javascript">

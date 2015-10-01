@@ -2,6 +2,7 @@
 
 namespace Hel\Http\Controllers;
 
+use Hel\User;
 use Illuminate\Http\Request;
 
 use Hel\Http\Requests;
@@ -33,6 +34,7 @@ class NewsController extends Controller
         return view('news.show')
             ->with('article', $article)
             ->with('articles', $articles)
+            ->with('author', User::find($article->user_id))
             ->with('currentMenu', 'news');
     }
 }
