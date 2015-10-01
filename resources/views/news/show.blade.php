@@ -21,7 +21,7 @@
             {!! $article->body !!}
             <hr />
             <div class="addthis_sharing_toolbox"></div>
-            <div class="well">
+            <div class="well" style="margin-top: 10px;">
                 <div class="row">
                     <div class="col-md-2">
                         <img src="//{{'www.gravatar.com/avatar/'.md5($author->email)}}" class="img-circle" alt="{{$author->name}}">
